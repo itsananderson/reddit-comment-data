@@ -1,3 +1,5 @@
+mkdir out > /dev/null 2>&1
+
 for d in 20*
 do
     echo $d
