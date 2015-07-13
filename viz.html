@@ -69,11 +69,11 @@
         // extract the x labels for the axis and scale domain
         var xLabels = data.map(function (d) { return d['month']; })
         xScale.domain(xLabels);
-        yScale.domain([0, Math.round(d3.max(data, function(d) { console.log(d['AskReddit']); return parseInt(d['AskReddit']); }))]);
+        yScale.domain([0, Math.round(d3.max(data, function(d) { console.log(d['comment_count']); return parseInt(d['comment_count']); }))]);
 
         var line = d3.svg.line()
             .x(function(d) { return xScale(d['month']); })
-            .y(function(d) { console.log(d); return yScale(d['AskReddit']); });
+            .y(function(d) { console.log(d); return yScale(d['comment_count']); });
 
         svg.append("path")
             .datum(data)
