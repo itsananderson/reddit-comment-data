@@ -8,6 +8,22 @@
 		stroke-width: 3;
 	}
 	
+	.line.politics {
+		stroke: red;
+	}
+
+	.line.pics {
+		stroke: orange;
+	}
+
+	.line.funny {
+		stroke: green;
+	}
+	
+	.line.reddit-com {
+		stroke: black;
+	}
+
 	.axis path,
 	.axis line {
 		fill: none;
@@ -24,16 +40,25 @@
 		font-size: 10px;
 		font-family: sans-serif;
 	}
+
+	p {
+	    font-weight: bold;
+	}
 	
 </style>
 
 <body>
+<p style="color: black">r/reddit.com</p>
+<p style="color: blue">r/AskReddit</p>
+<p style="color: red">r/politics</p>
+<p style="color: orange">r/pics</p>
+<p style="color: green">r/funny</p>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 	var height = 300;
 	var width = 600;
 	var margin = {top: 20, right:20, bottom: 50, left: 20};
-	
+
 	// formatters for axis and labels
 	var currencyFormat = d3.format("$0.2f");
 	var decimalFormat = d3.format("0.2f");
@@ -64,21 +89,54 @@
 		.scale(yScale)
 		.orient("left");
 
-    d3.csv("askreddit.csv", function(data) {
-        console.log(data[0]);
+    d3.csv("askreddit.csv", function(data1) {
+    d3.csv("politics.csv", function(data2) {
+    d3.csv("pics.csv", function(data3) {
+    d3.csv("funny.csv", function(data4) {
+    d3.csv("reddit.com.csv", function(data5) {
         // extract the x labels for the axis and scale domain
-        var xLabels = data.map(function (d) { return d['month']; })
+        var xLabels = data2.map(function (d) { return d['month']; })
         xScale.domain(xLabels);
-        yScale.domain([0, Math.round(d3.max(data, function(d) { console.log(d['comment_count']); return parseInt(d['comment_count']); }))]);
+	var maxY1 = Math.round(d3.max(data1, function(d) { return parseInt(d['comment_count']); }));
+	var maxY2 = Math.round(d3.max(data2, function(d) { return parseInt(d['comment_count']); }));
+	var maxY3 = Math.round(d3.max(data3, function(d) { return parseInt(d['comment_count']); }));
+	var maxY4 = Math.round(d3.max(data4, function(d) { return parseInt(d['comment_count']); }));
+	var maxY5 = Math.round(d3.max(data5, function(d) { return parseInt(d['comment_count']); }));
+        yScale.domain([0, Math.max(Math.max(Math.max(maxY1, maxY2), Math.max(maxY3, maxY4)), maxY5)]);
 
         var line = d3.svg.line()
             .x(function(d) { return xScale(d['month']); })
-            .y(function(d) { console.log(d); return yScale(d['comment_count']); });
+            .y(function(d) { return yScale(d['comment_count']); });
 
         svg.append("path")
-            .datum(data)
+            .datum(data1)
             .attr("class","line")
             .attr("d", line);
+
+        svg.append("path")
+            .datum(data2)
+            .attr("class","line politics")
+            .attr("d", line);
+
+        svg.append("path")
+            .datum(data3)
+            .attr("class","line pics")
+            .attr("d", line);
+
+        svg.append("path")
+            .datum(data4)
+            .attr("class","line funny")
+            .attr("d", line);
+
+        svg.append("path")
+            .datum(data5)
+            .attr("class","line reddit-com")
+            .attr("d", line);
+
+    });
+    });
+    });
+    });
     });
 </script>
 </body>
