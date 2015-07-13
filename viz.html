@@ -88,11 +88,11 @@
 		.scale(yScale)
 		.orient("left");
 
-    d3.csv("askreddit.csv", function(data1) {
-    d3.csv("politics.csv", function(data2) {
-    d3.csv("pics.csv", function(data3) {
-    d3.csv("funny.csv", function(data4) {
-    d3.csv("reddit.com.csv", function(data5) {
+    d3.csv("csv/askreddit.csv", function(data1) {
+    d3.csv("csv/politics.csv", function(data2) {
+    d3.csv("csv/pics.csv", function(data3) {
+    d3.csv("csv/funny.csv", function(data4) {
+    d3.csv("csv/reddit.com.csv", function(data5) {
         // extract the x labels for the axis and scale domain
         var xLabels = data2.map(function (d) { return d['month']; })
         xScale.domain(xLabels);
