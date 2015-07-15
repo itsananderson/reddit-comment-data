@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Reddit Comment Data]]></title>
+        <description><![CDATA[Comments accumulated from the Reddit API]]></description>
+        <link>http://github.com/dylang/node-rss</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Wed, 15 Jul 2015 07:14:02 GMT</lastBuildDate>
+        <item>
+            <title><![CDATA[initial_data]]></title>
+            <link>magnet:?xt=urn:btih:7690F71EA949B868080401C749E878F98DE34D3D&amp;dn=reddit_data&amp;tr=http%3a%2f%2ftracker.pushshift.io%3a6969%2fannounce&amp;tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80</link>
+            <guid isPermaLink="true">magnet:?xt=urn:btih:7690F71EA949B868080401C749E878F98DE34D3D&amp;dn=reddit_data&amp;tr=http%3a%2f%2ftracker.pushshift.io%3a6969%2fannounce&amp;tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80</guid>
+        </item>
+    </channel>
+</rss>

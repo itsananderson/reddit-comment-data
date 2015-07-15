@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/itsananderson/reddit-comment-data#readme",
   "dependencies": {
-    "brain": "^0.7.0"
+    "brain": "^0.7.0",
+    "rss": "^1.1.1"
   }
 }
