@@ -24,6 +24,10 @@
 		stroke: black;
 	}
 
+	.line.leagueoflegends {
+		stroke: purple;
+	}
+
 	.axis path,
 	.axis line {
 		fill: none;
@@ -53,6 +57,7 @@
 <p style="color: red">r/politics</p>
 <p style="color: orange">r/pics</p>
 <p style="color: green">r/funny</p>
+<p style="color: purple">r/leagueoflegends</p>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 	var height = 300;
@@ -93,6 +98,7 @@
     d3.csv("csv/pics.csv", function(data3) {
     d3.csv("csv/funny.csv", function(data4) {
     d3.csv("csv/reddit.com.csv", function(data5) {
+    d3.csv("csv/leagueoflegends.csv", function(data6) {
         // extract the x labels for the axis and scale domain
         var xLabels = data2.map(function (d) { return d['month']; })
         xScale.domain(xLabels);
@@ -101,7 +107,8 @@
 	var maxY3 = Math.round(d3.max(data3, function(d) { return parseInt(d['comment_count']); }));
 	var maxY4 = Math.round(d3.max(data4, function(d) { return parseInt(d['comment_count']); }));
 	var maxY5 = Math.round(d3.max(data5, function(d) { return parseInt(d['comment_count']); }));
-        yScale.domain([0, Math.max(Math.max(Math.max(maxY1, maxY2), Math.max(maxY3, maxY4)), maxY5)]);
+	var maxY6 = Math.round(d3.max(data5, function(d) { return parseInt(d['comment_count']); }));
+        yScale.domain([0, Math.max(Math.max(Math.max(Math.max(maxY1, maxY2), Math.max(maxY3, maxY4)), maxY5, maxY6))]);
 
         var line = d3.svg.line()
             .x(function(d) { return xScale(d['month']); })
@@ -130,6 +137,11 @@
         svg.append("path")
             .datum(data5)
             .attr("class","line reddit-com")
+            .attr("d", line);
+
+        svg.append("path")
+            .datum(data6)
+            .attr("class","line leagueoflegends")
             .attr("d", line);
 
 	svg.select(".x.axis")
@@ -163,6 +175,7 @@
 		.attr("class", "text-label")
 		.attr("text-anchor", "middle")
 		.text("Year-Month");
+    });
     });
     });
     });
