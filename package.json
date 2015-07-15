@@ -1,0 +1,23 @@
+{
+  "name": "reddit-comment-data",
+  "version": "1.0.0",
+  "description": "Tools for processing reddit comment data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsananderson/reddit-comment-data.git"
+  },
+  "keywords": [
+    "reddit",
+    "comments"
+  ],
+  "author": "Will Anderson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itsananderson/reddit-comment-data/issues"
+  },
+  "homepage": "https://github.com/itsananderson/reddit-comment-data#readme"
+}
