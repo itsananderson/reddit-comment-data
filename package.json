@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/itsananderson/reddit-comment-data/issues"
   },
-  "homepage": "https://github.com/itsananderson/reddit-comment-data#readme"
+  "homepage": "https://github.com/itsananderson/reddit-comment-data#readme",
+  "dependencies": {
+    "brain": "^0.7.0"
+  }
 }
