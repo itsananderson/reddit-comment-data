@@ -2,5 +2,9 @@
 {
     "title": "initial_data",
     "url": "magnet:?xt=urn:btih:7690F71EA949B868080401C749E878F98DE34D3D&dn=reddit_data&tr=http%3a%2f%2ftracker.pushshift.io%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80"
+},
+{
+    "title": "RC_2015-06",
+    "url": "magnet:?xt=urn:btih:49e2d1c63accba9ede6defcaeabc89f108ce37eb&dn=RC%5F2015-06.bz2&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
 }
 ]
